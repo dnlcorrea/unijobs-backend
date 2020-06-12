@@ -123,3 +123,21 @@ client.test("Request executed successfully", function() {
 %}
 
 ######################################################
+
+### RATINGS ###############################################
+### create
+POST http://localhost:8080/ratings
+Content-Type: application/json
+
+{
+  "product_id": 1,
+  "rating": 4,
+  "evaluation": "Este é do bom"
+}
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response not ok");
+});
+%}
+

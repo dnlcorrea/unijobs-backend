@@ -2,10 +2,7 @@ package com.github.unijobs.api.model;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.ManyToMany;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -16,6 +13,9 @@ public class Item {
 
     private String featuredImage;
     private String name;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Rating> ratings;
 
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Category> categories;
