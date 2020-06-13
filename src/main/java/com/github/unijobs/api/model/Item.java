@@ -9,10 +9,13 @@ import java.util.List;
 @MappedSuperclass
 public class Item {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String description;
-
     private String featuredImage;
     private String name;
+    private String specifications;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Rating> ratings;
@@ -23,9 +26,39 @@ public class Item {
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
     private Timestamp createdAt;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Image> images;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getSpecifications() {
+        return specifications;
+    }
+
+    public void setSpecifications(String specifications) {
+        this.specifications = specifications;
+    }
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }
 
     public Timestamp getCreatedAt() {
         return createdAt;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getDescription() {

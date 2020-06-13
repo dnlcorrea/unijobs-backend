@@ -5,5 +5,5 @@
 2. UML: [link](docs/UML.jpeg)
 
 ## TODO:
-- [x] Categories PATCH
+Listados nas [Issues](https://github.com/viniengelage/unijobs-backend/issues)
 
