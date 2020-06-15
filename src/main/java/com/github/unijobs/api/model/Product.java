@@ -8,6 +8,17 @@ import java.util.List;
 public class Product extends Item{
     private Double price;
 
+    public List<Rating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
+    }
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "product")
+    private List<Rating> ratings;
+
     public Double getPrice() { return price; }
 
     public void setPrice(Double price) {

@@ -17,9 +17,6 @@ public class Item {
     private String name;
     private String specifications;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Rating> ratings;
-
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Category> categories;
 
