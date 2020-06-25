@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/${POSTGRES_DB:unijobs}
+    url: jdbc:postgresql://localhost:5432/${POSTGRES_DB:unijobs_database}
     username: ${POSTGRES_USER:postgres}
     password: ${POSTGRES_PASSWORD:postgres}
     initialization-mode: always
